@@ -1,68 +1,82 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Ionic React Bitcoin
 
-## Available Scripts
+App to display current bitcoin price data (BPI) in USD, EUR, and GBP from the [CoinDesk Bitcoin Price Index API](https://www.coindesk.com/api).
 
-In the project directory, you can run:
+This is a great tutorial from Paul Halliday of the Developer School, [Youtube video series: 'Ionic 4 & React - Bitcoin Price Tracker'](https://www.youtube.com/watch?v=sPvL3OlnmI8&list=PLtKjv92L0ihBWO6NtZhXEsR9NXf7Uf_ki&index=1)
 
-### `yarn start`
+## Table of contents
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* [General info](#general-info)
+* [Screenshots](#screenshots)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Features](#features)
+* [Status](#status)
+* [Inspiration](#inspiration)
+* [Contact](#contact)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## General info
 
-### `yarn test`
+* This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots
 
-### `yarn build`
+![screenshot](./img/bitcoin-display.png)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* [Ionic v4.11.1](https://ionicframework.com/)
+* [Ionic/react v4.11.1](https://ionicframework.com/)
+* [React v16.10.2](https://reactjs.org/)
+* [CoinDesk Bitcoin Price Index API](https://www.coindesk.com/api)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Setup
 
-### `yarn eject`
+* To start the server on _localhost://3000_ type: 'npm run start'
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Code Examples
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* display bitcoin logo and API prices & disclaimer
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```javascript
+  render() {
+    const { bitcoinInfo, loading } = this.state;
+    return (
+      <IonApp>
+        <IonContent>
+          <section>
+            <IonIcon icon={logoBitcoin} className="bitcoin__logo" />
+          </section>
+            {loading
+              ? this.createLoadingCards()
+              : this.createBitcoinCards(bitcoinInfo)}
+          <section className="bitcoin__disclaimer">
+            <p>{bitcoinInfo.disclaimer}</p>
+          </section>
+        </IonContent>
+      </IonApp>
+    );
+  }
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Features
 
-## Learn More
+* Shows skeleton cards while data is loading.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Bitcoin price shown in dollars, UK pounds and euros. See API ref for more cryptocurrency options.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Status & To-do list
 
-### Code Splitting
+* Status: Working. 1 error in dev console.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+* To-do: Correct render method error and key prop warning. Develop into more advanced app.
 
-### Analyzing the Bundle Size
+## Inspiration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+* Paul Halliday of the Developer School, Youtube video series: 'Ionic 4 & React - Bitcoin Price Tracker'
 
-### Making a Progressive Web App
+[Video 1 of 9: Project Overview](https://www.youtube.com/watch?v=sPvL3OlnmI8&list=PLtKjv92L0ihBWO6NtZhXEsR9NXf7Uf_ki&index=1)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Contact
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Repo created by [ABateman](https://www.andrewbateman.org) - feel free to contact me!

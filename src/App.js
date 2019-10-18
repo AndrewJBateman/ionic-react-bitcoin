@@ -3,10 +3,8 @@ import {
   IonApp,
   IonContent,
   IonIcon,
-  IonHeader,
-  IonTitle,
-  IonToolbar
 } from '@ionic/react';
+import { logoBitcoin } from 'ionicons/icons';
 import LoadingCard from './components/LoadingCard/LoadingCard';
 import BitcoinCard from './components/BitcoinCard/BitcoinCard';
 import { getBitcoinPrice } from './api/Bitcoin';
@@ -37,7 +35,7 @@ class App extends Component {
         <LoadingCard />
         <LoadingCard />
       </>
-    )
+    );
   }
 
   createBitcoinCards(bitcoinInfo) {
@@ -53,14 +51,12 @@ class App extends Component {
     return (
       <IonApp>
         <IonContent>
-          <section className="bitcoin__header">
-            <IonIcon name="logo-bitcoin" className="bitcoin__logo" />
+          <section>
+            <IonIcon icon={logoBitcoin} className="bitcoin__logo" />
           </section>
-
-            {loading === true
-            ? this.createLoadingCards()
-            : this.createBitcoinCards(bitcoinInfo)}
-          
+            {loading 
+              ? this.createLoadingCards()
+              : this.createBitcoinCards(bitcoinInfo)}       
           <section className="bitcoin__disclaimer">
             <p>{bitcoinInfo.disclaimer}</p>
           </section>
@@ -68,7 +64,6 @@ class App extends Component {
       </IonApp>
     );
   }
-  
 }
 
 export default App;
