@@ -1,14 +1,11 @@
 export const getBitcoinPrice = async () => {
+	try {
+		const res = await fetch(
+			`https://api.coindesk.com/v1/bpi/currentprice.json`
+		);
 
-  try {
-    const res = await fetch(
-      `https://api.coindesk.com/v1/bpi/currentprice.json`
-    );
-
-    return await res.json();
-
-  } catch (e) {
-    console.error(e);
-  }
-
-}
+		return await res.json();
+	} catch (e) {
+		console.error(e);
+	}
+};

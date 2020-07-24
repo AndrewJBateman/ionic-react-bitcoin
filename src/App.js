@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { 
+import {
   IonApp,
   IonContent,
   IonIcon,
@@ -41,7 +41,7 @@ class App extends Component {
   createBitcoinCards(bitcoinInfo) {
     return Object.keys(bitcoinInfo.bpi)
       .map((item, index) => (
-        <BitcoinCard data={bitcoinInfo.bpi[item]} />
+        <BitcoinCard data={bitcoinInfo.bpi[item]} key={index}/>
       )
     )
   }
@@ -54,9 +54,9 @@ class App extends Component {
           <section>
             <IonIcon icon={logoBitcoin} className="bitcoin__logo" />
           </section>
-            {loading 
+            {loading
               ? this.createLoadingCards()
-              : this.createBitcoinCards(bitcoinInfo)}       
+              : this.createBitcoinCards(bitcoinInfo)}
           <section className="bitcoin__disclaimer">
             <p>{bitcoinInfo.disclaimer}</p>
           </section>
