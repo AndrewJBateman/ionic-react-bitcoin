@@ -15,6 +15,7 @@
   * [:cool: Features](#cool-features)
   * [:clipboard: Status & To-do list](#clipboard-status--to-do-list)
   * [:clap: Inspiration](#clap-inspiration)
+  * [:file_folder: License](#file_folder-license)
   * [:envelope: Contact](#envelope-contact)
 
 ## :books: General info
@@ -29,7 +30,8 @@
 
 * [Ionic v5](https://ionicframework.com/)
 * [Ionic/react v5](https://ionicframework.com/)
-* [React v16](https://reactjs.org/)
+* [React v16](https://reactjs.org/) installed globally
+* [React Scripts v4](https://www.npmjs.com/package/react-scripts) installed globally, scripts and configuration used by Create React App.
 * [CoinDesk Bitcoin Price Index API](https://www.coindesk.com/api)
 * [npx](https://www.npmjs.com/package/npx) CLI tool whose purpose is to make it easy to install and manage dependencies hosted in the npm registry.
 
@@ -64,12 +66,13 @@
 
 ## :cool: Features
 
+* No API key required
 * Shows skeleton cards while data is loading.
 * Bitcoin price shown in dollars, UK pounds and euros. See API ref for more cryptocurrency options.
 
 ## :clipboard: Status & To-do list
 
-* Status: Working.
+* Status: Working. Updated april 2021
 * To-do: nothing
 
 ## :clap: Inspiration
@@ -78,6 +81,10 @@
 * [Video 1 of 9: Project Overview](https://www.youtube.com/watch?v=sPvL3OlnmI8&list=PLtKjv92L0ihBWO6NtZhXEsR9NXf7Uf_ki&index=1)
 * [FCC: npm vs npx — What’s the Difference?](https://www.freecodecamp.org/news/npm-vs-npx-whats-the-difference/)
 
+## :file_folder: License
+
+* This project is licensed under the terms of the MIT license.
+
 ## :envelope: Contact
 
-* Repo created by [ABateman](https://www.andrewbateman.org) - you are welcome to [send me a message](https://andrewbateman.org/contact)
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
